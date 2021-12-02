@@ -9,7 +9,7 @@ import javax.swing.*;
 public class MainFrame {
 	private JFrame frame;
 	private JPanel panel1;
-	private JLabel label1;
+	private JLabel label1, label2;
 	private JButton button1, button2;
 	private String teamsPath = "C:\\Users\\Dell_E5400\\AppData\\Local\\Microsoft\\Teams\\current\\Teams.exe";
 	private String notePath = "C:\\Program Files\\Notepad++\\notepad++.exe";
@@ -65,6 +65,12 @@ public class MainFrame {
 				try {
 					Runtime rt = Runtime.getRuntime();
 					rt.exec("taskkill /F /IM mspaint.exe");
+					rt.exec("taskkill /F /IM SnippingTool.exe");
+					rt.exec("taskkill /F /IM notepad++.exe");
+					rt.exec("taskkill /F /IM SumatraPDF.exema");
+					rt.exec("taskkill /F /IM Teams.exe");
+					rt.exec("taskkill /F /IM chrome.exe");
+					rt.exec("taskkill /F /IM OUTLOOK.EXE");
 				}
 				catch (Exception e2) {
 					e2.printStackTrace();
@@ -76,6 +82,10 @@ public class MainFrame {
 		label1 = new JLabel();
 		label1.setText("School Apps Launcher");
 		this.button1.add(label1);
+		
+		label2 = new JLabel();
+		label2.setText("Close All");
+		this.button2.add(label2);
 		
 		
 		this.frame.setVisible(true);
